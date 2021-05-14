@@ -1,0 +1,16 @@
+header {
+  background-color: #151515;
+  font-family: 'RobotoSlab';
+  .nav-link {
+    font-weight: 700;
+    color: #fff;
+    font-size: 18px;
+    line-height: 26px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    &:hover {
+      background-color: #d81a24;
+      color: #fff;
+    }
+  }
+}
