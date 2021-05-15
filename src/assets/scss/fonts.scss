@@ -1,6 +1,11 @@
 @font-face {
   font-family: 'RobotoSlab';
-  src: url("~@/assets/fonts/RobotoSlab-Regular.ttf");
+  src: url("../fonts/RobotoSlab-Regular.ttf");
   font-style: normal;
   font-weight: 400;
+}
+
+@font-face {
+  font-family: 'FontAwesome-Solid';
+  src: url("../fonts/Font Awesome 5 Free-Solid-900.otf");
 }

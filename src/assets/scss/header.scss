@@ -1,16 +1,37 @@
 header {
   background-color: #151515;
   font-family: 'RobotoSlab';
+
+  .header-navbar {
+    li {
+      margin-left: 20px;
+    }
+  }
+
   .nav-link {
     font-weight: 700;
     color: #fff;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 26px;
     padding: 6px 10px;
     border-radius: 4px;
+
     &:hover {
       background-color: #d81a24;
       color: #fff;
+    }
+
+    &.dropdown-arrow {
+      &:after {
+        content: "\f078";
+        display: inline-block;
+        margin-left: 5px;
+        font-size: 8px;
+        font-weight: 400;
+        font-family: 'FontAwesome-Solid';
+        vertical-align: top;
+        width: auto;
+      }
     }
   }
 }

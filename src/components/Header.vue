@@ -8,8 +8,18 @@
             </a>
             <div class="header-navigation d-flex align-items-center">
               <ul class="header-navbar d-flex justify-content-between align-items-center">
-                <li v-for="item in navMenu" :key="item">
-                  <a href="" class="nav-link">{{ item }}</a>
+                <li v-for="item in navMenu" :key="item.title">
+                  <a href="" class="nav-link"
+                     :class="item.dropdown?'dropdown-arrow':''"
+                  >{{ item.title }}</a>
+                  <ul v-if="item.dropdown">
+                    <li
+                        v-for="dropdown_item in item.dropdown"
+                        :key="dropdown_item"
+                    >
+                      <a href="">{{dropdown_item}}</a>
+                    </li>
+                  </ul>
                 </li>
               </ul>
               <button class="search-btn"></button>
@@ -25,8 +35,38 @@ export default {
   name: 'Header',
   data() {
     return {
+
       navMenu:[
-        'Home','Catalog','News','Pages','Shop','Contact Us'
+        {
+          title:'Home',
+          dropdown:null
+        },
+        {
+          title:'Catalog',
+          dropdown:['Movie Details']
+        },
+        {
+          title:'News',
+          dropdown:[
+              'Default Blog',
+              '2 Columns Blog',
+              '3 Columns Blog',
+              'Blog Archive',
+              'Timeline',
+              'Post page',
+              'Blog with Left Sidebar',
+              'Blog with Right Sidebar',
+              'Blog without Sidebar',
+          ]
+        },
+        {
+          title:'Pages',
+          dropdown:null
+        },
+        {
+          title:'Shop',
+          dropdown:null
+        },
       ]
     }
   }
