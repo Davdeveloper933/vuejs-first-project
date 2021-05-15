@@ -8,22 +8,53 @@
             </a>
             <div class="header-navigation d-flex align-items-center">
               <ul class="header-navbar d-flex justify-content-between align-items-center">
-                <li v-for="item in navMenu" :key="item.title">
+                <li v-for="item in navMenu" :key="item.title"
+                    @mouseover="item.expand = true"
+                    @mouseleave="item.expand = false"
+                >
+
                   <a href="" class="nav-link"
                      :class="item.dropdown?'dropdown-arrow':''"
+
                   >{{ item.title }}</a>
-                  <ul v-if="item.dropdown">
+                  <ul class="dropdown-list"
+                      v-if="item.title !== 'Pages' && item.dropdown !== null"
+                      :class="{expanded:item.expand}"
+                  >
                     <li
                         v-for="dropdown_item in item.dropdown"
                         :key="dropdown_item"
                     >
-                      <a href="">{{dropdown_item}}</a>
+                      <a href="" class="nav-link"
+
+                      >{{dropdown_item}}</a>
                     </li>
                   </ul>
+                  <div class="pages-menu d-flex row dropdown-list"
+                       v-else-if="item.title === 'Pages' && item.dropdown !== null"
+                       :class="{expanded:item.expand}"
+                  >
+                    <div class="d-flex flex-column col-3"
+                         v-for="object in item.dropdown"
+                         :key="object.title"
+                    >
+                      <h2 class="page-menu-title mb-3">{{ object.title}}</h2>
+                      <ul class="">
+                        <li
+                            v-for="list_item in object.pageList"
+                            :key="list_item"
+                        >
+                          <a href="" class="nav-link">{{list_item}}</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </li>
               </ul>
               <button class="search-btn"></button>
-              <div class="shopping-cart-icon"></div>
+              <div class="shopping-cart-icon">
+                <span>2</span>
+              </div>
             </div>
           </div>
       </div>
@@ -35,18 +66,21 @@ export default {
   name: 'Header',
   data() {
     return {
-
+      expand:false,
       navMenu:[
         {
           title:'Home',
+          expand:false,
           dropdown:null
         },
         {
           title:'Catalog',
+          expand:false,
           dropdown:['Movie Details']
         },
         {
           title:'News',
+          expand:false,
           dropdown:[
               'Default Blog',
               '2 Columns Blog',
@@ -61,13 +95,81 @@ export default {
         },
         {
           title:'Pages',
-          dropdown:null
+          expand:false,
+          dropdown:[
+            {
+              title:'Elements',
+              pageList:[
+                  'Tabs & Accordions',
+                  'Typography',
+                  'Forms',
+                  'Buttons',
+                  'Grid',
+                  'Icons',
+                  'Tables',
+                  'Progress bars',
+              ]
+            },
+            {
+              title:'Pages 1',
+              pageList:[
+                  'About Us',
+                  'Our Team',
+                  'Team member profile',
+                  'Contact Us 2',
+                  'Pricing',
+                  'Services page',
+                  'Client Page',
+                  'FAQ Page',
+              ]
+            },
+            {
+              title:'Pages 2',
+              pageList:[
+                  '404',
+                  'Coming soon',
+                  'Login page',
+                  'Maintenance page',
+                  'Register page',
+                  'Search results page',
+                  'Terms of Use',
+              ]
+            },
+            {
+              title:'Gallery',
+              pageList:[
+                  'Grid Gallery',
+                  'Grid Without Padding Gallery',
+                  'Masonry Gallery',
+                  'Cobbles Gallery',
+              ]
+            },
+          ]
         },
         {
           title:'Shop',
-          dropdown:null
+          expand:false,
+          dropdown:[
+              'Product catalog',
+              'Single Movie',
+              'Shopping cart',
+              'Checkout'
+          ]
+        },
+        {
+          title:'Contact Us',
+          expand:false,
+          dropdown:null,
         },
       ]
+    }
+  },
+  methods:{
+    mouseover(item) {
+      item.expand = true;
+    },
+    mouseleave(item) {
+      item.expand = false;
     }
   }
 }

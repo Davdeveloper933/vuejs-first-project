@@ -1,7 +1,10 @@
 header {
-  background-color: #151515;
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
   font-family: 'RobotoSlab';
-
+  color: white;
+  padding: 50px 0;
   .header-navbar {
     li {
       margin-left: 20px;
@@ -9,6 +12,7 @@ header {
   }
 
   .nav-link {
+    font-family: 'RobotoSlab';
     font-weight: 700;
     color: #fff;
     font-size: 16px;
@@ -32,6 +36,117 @@ header {
         vertical-align: top;
         width: auto;
       }
+    }
+  }
+
+  .dropdown-list {
+    background: #151515;
+    box-shadow: 1px 4px 5px 2px rgba(0, 0, 0, .11);
+    border-radius: 6px;
+    position: absolute;
+    z-index: 4;
+    padding: 17px 20px;
+    transform: translateY(30px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease-in-out;
+    top: 150px;
+
+    &.expanded {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-30px);
+      top: 150px;
+    }
+
+    li {
+      margin-left: 0;
+    }
+
+    .nav-link {
+      font-family: 'Roboto';
+      font-weight: 300;
+      padding: 6px 25px;
+      line-height: 24px;
+
+      &:hover {
+        color: #d81a24;
+        background-color: unset;
+      }
+    }
+  }
+
+  .pages-menu {
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    &.dropdown-list {
+      padding: 17px 20px;
+    }
+
+    .page-menu-title {
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .nav-link {
+      position: relative;
+      padding: 6px 25px;
+
+      &:before {
+        content: "\f0da";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        display: inline-block;
+        font-size: 12px;
+        font-family: "FontAwesome-Solid";
+        color: #b7b7b7;
+      }
+    }
+  }
+
+  .search-btn {
+    color: #fff;
+    font-size: 18px;
+
+    &:before {
+      content: '\f002';
+      transform: scale(1) rotate(0deg);
+      font-family: 'FontAwesome-Solid';
+    }
+  }
+
+  .search-btn,
+  .shopping-cart-icon {
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    &:hover {
+      background-color: #d81a24;
+      color: #fff;
+
+    }
+  }
+
+  .shopping-cart-icon {
+    color: #fff;
+
+    &:before {
+      content: "\f07a";
+      font-weight: 400;
+      font-family: 'FontAwesome-Solid';
+    }
+    span {
+      font-weight: 700;
+      display: inline-block;
+      margin-left: 10px;
+      font-size: 16px;
     }
   }
 }

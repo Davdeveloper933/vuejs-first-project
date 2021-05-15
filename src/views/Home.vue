@@ -1,10 +1,6 @@
 <template>
   <div class="home">
-<!--    <img alt="Vue logo" src="../assets/logo.png">-->
-<!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
-    <video controls loop>
-      <source src="~@/assets/01-video.mp4" type="video/mp4">
-    </video>
+    <HomeSlider/>
   </div>
 </template>
 
@@ -12,10 +8,20 @@
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
 
+import HomeSlider from "../components/HomeSlider";
 export default {
   name: 'Home',
-  components: {
-    // HelloWorld
+  components: {HomeSlider},
+  data(){
+    return {
+
+    }
+  },
+  computed: {
+
+  },
+  mounted() {
+
   }
 }
 </script>
