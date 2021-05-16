@@ -15,7 +15,7 @@ header {
     font-family: 'RobotoSlab';
     font-weight: 700;
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 26px;
     padding: 6px 10px;
     border-radius: 4px;
@@ -111,20 +111,90 @@ header {
   }
 
   .search-btn {
-    color: #fff;
-    font-size: 18px;
-
-    &:before {
+    margin: 0 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'FontAwesome-Solid';
+    width: 42px;
+    height: 38px;
+    button {
+      color: #fff;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'FontAwesome-Solid';
+      width: 42px;
+      height: 38px;
+    }
+    &.active-toggle button:before {
       content: '\f002';
+      transition: .3s all ease;
       transform: scale(1) rotate(0deg);
       font-family: 'FontAwesome-Solid';
+    }
+
+    &.active-toggle:after,
+    &.active-toggle:before {
+      //position: absolute;
+      //left: 50%;
+      //top: 50%;
+    }
+
+    &.active-toggle button:after {
+      content: '';
+      transition: .3s all ease;
+      transform: scale(0) rotate(-90deg);
+      opacity: 0;
+      font-family: 'FontAwesome-Solid';
+    }
+    &.active-toggle.clicked button{
+      &:after {
+        content: '\f00d';
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+      }
+      &:before {
+        content: "";
+        transform: scale(0) rotate(90deg);
+        opacity: 0;
+      }
+    }
+
+    .search-inpt-block {
+      position: absolute;
+      min-width: 290px;
+      top: 125%;
+      right: -18px;
+      opacity: 0;
+      transition: .3s all ease;
+      &.clicked {
+        opacity: 1;
+      }
+      input {
+        width: 100%;
+        padding: 7px 18px 7px 18px;
+        height: 48px;
+        border-radius: 6px;
+        border: none;
+        font-size: 16px;
+        letter-spacing: 0.02em;
+        font-weight: 300;
+        line-height: 34px;
+        color: #000;
+        font-family: 'Roboto';
+        background-color: #fff;
+        box-shadow: 3px 4px 8px 0px rgba(0, 0, 0,0.11);
+      }
     }
   }
 
   .search-btn,
   .shopping-cart-icon {
     padding: 6px 10px;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
     &:hover {

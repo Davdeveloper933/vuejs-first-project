@@ -51,7 +51,21 @@
                   </div>
                 </li>
               </ul>
-              <button class="search-btn"></button>
+              <div class="search-btn active-toggle"
+                   :class="{clicked:clicked}"
+              >
+                <button class=" "
+                        @click="clicked = !clicked"
+                ></button>
+                <div class="search-inpt-block"
+                     :class="{clicked:clicked}"
+                >
+                  <input type="text" placeholder="Search..">
+                </div>
+              </div>
+
+
+
               <div class="shopping-cart-icon">
                 <span>2</span>
               </div>
@@ -67,6 +81,7 @@ export default {
   data() {
     return {
       expand:false,
+      clicked:false,
       navMenu:[
         {
           title:'Home',

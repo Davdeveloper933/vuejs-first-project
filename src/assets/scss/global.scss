@@ -16,6 +16,14 @@ button {
   background-color: transparent;
 }
 
+input {
+  border: none;
+  &:focus {
+    outline: none;
+    border: none;
+  }
+}
+
 li {
   list-style: none;
 }

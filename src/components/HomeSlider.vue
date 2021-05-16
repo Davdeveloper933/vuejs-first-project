@@ -40,6 +40,7 @@ export default {
           slidesToShow: 2,
           autoplay:true,
           dots:true,
+          arrows:false,
           // Any other options that can be got from plugin documentation
         },
         sliderItems:[
