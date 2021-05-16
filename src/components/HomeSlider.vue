@@ -20,7 +20,9 @@
              :key="item.title"
         >
           <img :src="require(`@/assets/images/${item.src}`)" alt="" class="img-fluid w-100">
-          <h2 class="film-title">{{ item.title }}</h2>
+          <h2 class="film-title">
+            <a href="">{{ item.title }}</a>
+          </h2>
           <p class="film-desc">{{ item.desc }}</p>
         </div>
     </slick>
