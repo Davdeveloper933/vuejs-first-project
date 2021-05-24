@@ -13,10 +13,10 @@
                     @mouseleave="item.expand = false"
                 >
 
-                  <a href="" class="nav-link"
+                  <router-link :to="{name:item.title}" class="nav-link"
                      :class="item.dropdown?'dropdown-arrow':''"
 
-                  >{{ item.title }}</a>
+                  >{{ item.title }}</router-link>
                   <ul class="dropdown-list"
                       v-if="item.title !== 'Pages' && item.dropdown !== null"
                       :class="{expanded:item.expand}"
@@ -25,9 +25,9 @@
                         v-for="dropdown_item in item.dropdown"
                         :key="dropdown_item"
                     >
-                      <a href="" class="nav-link"
+                      <router-link :to="{name:dropdown_item}" class="nav-link"
 
-                      >{{dropdown_item}}</a>
+                      >{{dropdown_item}}</router-link>
                     </li>
                   </ul>
                   <div class="pages-menu d-flex row dropdown-list"
@@ -66,9 +66,9 @@
 
 
 
-              <div class="shopping-cart-icon">
-                <span>2</span>
-              </div>
+              <router-link :to="{name:'Shopping Cart'}" class="d-block shopping-cart-icon">
+                <span v-if="getShoppingCart.length">{{ getShoppingCart.length }}</span>
+              </router-link>
             </div>
           </div>
       </div>
@@ -76,12 +76,20 @@
 </template>
 
 <script>
+import {mapGetters} from "vuex"
+
 export default {
   name: 'Header',
   data() {
     return {
       expand:false,
       clicked:false,
+      shopCartLenght:0,
+      arr:[
+        {quantity:1},
+        {quantity:1},
+        {quantity:1}
+      ],
       navMenu:[
         {
           title:'Home',
@@ -180,12 +188,30 @@ export default {
     }
   },
   methods:{
+    // ...mapMutations(["getLocalStorage"]),
     mouseover(item) {
       item.expand = true;
     },
     mouseleave(item) {
       item.expand = false;
+    },
+    // iterate() {
+    //   this.arr.forEach((item)=> {
+    //
+    //   })
+    // },
+    test(total,value) {
+      return total+ value.quantity;
     }
+  },
+  computed:{
+    ...mapGetters(["getShoppingCart"])
+  },
+  created() {
+
+  },
+  mounted() {
+      console.log(this.arr.reduce(this.test,0))
   }
 }
 </script>

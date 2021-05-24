@@ -1,37 +1,13 @@
 <template>
   <div id="app" >
-    <Header
-        v-scroll="handleScroll"
-        :class="{activeheader:triggered}"
-    ></Header>
-    <div class="current-page-section"
-
-    >
+      <Header
+          v-scroll="handleScroll"
+          :class="{activeheader:triggered}"
+      ></Header>
       <router-view/>
-    </div>
     <Footer/>
-    <pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </pre>
   </div>
 </template>
-
 <script>
 
   import Header from "@/components/Header";
@@ -39,7 +15,7 @@
 
   export default {
     name:'App',
-    components: {Footer, Header},
+    components: {Footer,Header},
     data() {
       return {
         triggered:false,
@@ -54,10 +30,6 @@
 
       handleScroll: function () {
         if (window.scrollY > 100) {
-          // el.setAttribute(
-          //     'style',
-          //     ''
-          // )
           this.triggered = true;
         }else {
           this.triggered = false;

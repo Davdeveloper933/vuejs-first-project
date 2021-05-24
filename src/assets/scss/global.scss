@@ -16,7 +16,7 @@ button {
   background-color: transparent;
 }
 
-input {
+input,textarea {
   border: none;
   &:focus {
     outline: none;
@@ -56,6 +56,7 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  letter-spacing: 0.02em;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -90,4 +91,28 @@ select {
 
 body {
   font-family: 'Roboto',sans-serif;
+}
+
+.section-title {
+  text-transform: uppercase;
+  font-size: 46px;
+  color: #000000;
+  font-family: 'RobotoSlab';
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-align: center;
+}
+
+section {
+  padding-top: 90px;
+  padding-bottom: 68px;
+}
+
+.title {
+  text-transform: uppercase;
+}
+
+.intro-bg {
+  background-image: url("~@/assets/images/bg-image-1.jpg");
+  background-size: cover;
 }

@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <HomeSlider/>
+    <WatchMovies/>
   </div>
 </template>
 
@@ -8,20 +9,10 @@
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
 
-import HomeSlider from "../components/HomeSlider";
+import HomeSlider from "@/components/HomeSlider";
+import WatchMovies from "@/components/WatchMovies";
 export default {
   name: 'Home',
-  components: {HomeSlider},
-  data(){
-    return {
-
-    }
-  },
-  computed: {
-
-  },
-  mounted() {
-
-  }
+  components: {WatchMovies, HomeSlider}
 }
 </script>

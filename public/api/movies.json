@@ -1,0 +1,129 @@
+[
+  {
+    "category": "Action",
+    "children":[
+      {
+        "id": 10,
+        "title": "Ant-Man and the Wasp",
+        "description": "2018, USA, Action",
+        "rating": 8,
+        "img": "gallery-1",
+        "price": 29
+      },
+      {
+        "id": 3,
+        "title": "Avengers: Infinity War",
+        "description": "2018, USA, Action, Fantasy",
+        "rating": 10,
+        "img": "gallery-2",
+        "price": 56.99
+      },
+      {
+        "id": 2,
+        "title": "Game of Thrones",
+        "description": "2018, USA, Adventure, Action",
+        "rating": 9,
+        "img": "gallery-4",
+        "price": 32.56
+      },
+      {
+        "id": 5,
+        "title": "Aquaman",
+        "description": "2018, USA, Action, Fantasy",
+        "rating": 7.7,
+        "img": "gallery-6",
+        "price": 39.99
+      }
+    ]
+  },
+  {
+    "category": "Fantasy",
+    "children": [
+      {
+        "id": 3,
+        "title": "Avengers: Infinity War",
+        "description": "2018, USA, Action, Fantasy",
+        "rating": 10,
+        "img": "gallery-2",
+        "price": 56.99,
+        "imdbID":"tt0944947"
+      },
+      {
+        "id": 11,
+        "title": "The Flash",
+        "description": "2014, USA, Adventure, Fantasy",
+        "rating": 7.5,
+        "img": "gallery-3",
+        "price": 110.99
+      },
+      {
+        "id": 5,
+        "title": "Aquaman",
+        "description": "2018, USA, Action, Fantasy",
+        "rating": 7.7,
+        "img": "gallery-6",
+        "price": 39.99
+      }
+    ]
+  },
+  {
+    "category": "Adventure",
+    "children": [
+      {
+        "id": 11,
+        "title": "The Flash",
+        "description": "2014, USA, Adventure, Fantasy",
+        "rating": 7.5,
+        "img": "gallery-3",
+        "price": 110.99
+      },
+      {
+        "id": 2,
+        "title": "Game of Thrones",
+        "description": "2018, USA, Adventure, Action",
+        "rating": 9,
+        "img": "gallery-4",
+        "price": 32.56,
+        "imdbID":"tt0944947"
+      },
+      {
+        "id": 8,
+        "title": "Titans",
+        "description": "2018, USA, Drama, Adventure",
+        "rating": 6.8,
+        "img": "gallery-5",
+        "price": 16.77
+      },
+      {
+        "id": 12,
+        "title": "Hold the Dark",
+        "description": "2018, USA, Adventure, Mystery",
+        "rating": 7.1,
+        "img": "gallery-7",
+        "price": 45.78
+      },
+      {
+        "id": 13,
+        "title": "The Predator",
+        "description": "2018, USA, Adventure, Horror",
+        "rating": 6,
+        "img": "gallery-8",
+        "price": 120.79
+      }
+    ]
+  },
+  {
+    "category": "Horror",
+    "children":[
+      {
+        "id": 13,
+        "title": "The Predator",
+        "description": "2018, USA, Adventure, Horror",
+        "rating": 6,
+        "img": "gallery-8",
+        "price": 120.79
+      }
+    ]
+  }
+
+]

@@ -1,6 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import MovieDetails from "@/views/MovieDetails";
+import ProductItem from "@/views/ProductItem";
+import ShoppingCart from "@/views/ShoppingCart";
+import Home from "@/views/Home";
+import Catalog from "@/views/Catalog";
+import ProductsCatalog from "@/views/ProductsCatalog";
 
 Vue.use(VueRouter)
 
@@ -9,6 +14,31 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/movie-details',
+    name: 'Movie Details',
+    component: MovieDetails
+  },
+  {
+    path: '/product-item/:id',
+    name: 'Single Movie',
+    component: ProductItem
+  },
+  {
+    path: '/shop-cart',
+    name: 'Shopping Cart',
+    component: ShoppingCart
+  },
+  {
+    path:'/catalog',
+    name:'Catalog',
+    component: Catalog
+  },
+  {
+    path:'/products-catalog',
+    name:'Product catalog',
+    component: ProductsCatalog
   },
   {
     path: '/about',
