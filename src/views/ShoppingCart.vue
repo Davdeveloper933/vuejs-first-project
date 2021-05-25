@@ -9,6 +9,7 @@
       <div class="row justify-content-end">
         <div class="col-12">
           <div class="table-responsive">
+            {{getShoppingCart}}
             <table class="table table-hover text-left" v-if="getShoppingCart.length">
               <thead>
               <tr class="tr-bg text-white">
@@ -20,10 +21,10 @@
               </tr>
               </thead>
               <tbody>
-              <tr v-for="(product,index) in getShoppingCart" :key="product.id">
+              <tr v-for="(product,index) in getShoppingCart" :key="index">
                 <td><span @click="DELETE_ITEM(index)" class="fa-trash icon"></span></td>
-                <td><a href="shop-product.html">{{product.title}}</a></td>
-                <td>${{product.price | float(product.price)}}</td>
+                <td><a href="">{{product.title}}</a></td>
+                <td>${{product.price}}</td>
                 <td>
                   <form class="quantity">
                     <label class="d-flex align-items-center">
@@ -37,7 +38,7 @@
                     </label>
                   </form>
                 </td>
-                <td>${{ (product.price*product.quantity) | float((product.price*product.quantity))}}</td>
+                <td>${{ (product.price*product.quantity) }}</td>
               </tr>
               </tbody>
             </table>
@@ -59,7 +60,7 @@
               <tbody>
               <tr>
                 <td class="text-gray">Total</td>
-                <td class="fw-b">${{getTotalValue | float(getTotalValue)}}</td>
+                <td class="fw-b">${{getTotalValue}}</td>
               </tr>
               </tbody>
             </table>
@@ -84,7 +85,7 @@ name: "ShoppingCart",
       }
   },
   methods:{
-    ...mapActions(["getPostsAction","getMovie"]),
+    ...mapActions(["getPostsAction"]),
     ...mapMutations(["DELETE_ITEM","CLEAR_CART","PLUS","MINUS"]),
 
   },
@@ -95,12 +96,6 @@ name: "ShoppingCart",
   created() {
 
   },
-  filters:{
-      float:(number)=> {
-
-        return number.toFixed(2)
-      }
-  }
 }
 </script>
 

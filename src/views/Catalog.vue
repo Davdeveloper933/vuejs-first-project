@@ -95,7 +95,7 @@ name: "Catalog",
     // }
   },
   computed:{
-    ...mapGetters(["getCategories","GET_ALL_CATEGORIES"]),
+    ...mapGetters(["getCategories"]),
     // getAllCategories() {
     //   this.getCategories.forEach((item)=>{
     //     item.children.forEach((value)=> {
@@ -106,7 +106,7 @@ name: "Catalog",
     // },
     filterCategories() {
       if(this.selected === 'All Categories') {
-          return this.GET_ALL_CATEGORIES
+          return this.getCategories
       }else {
         return this.getCategories.filter((item)=> {
             if(item.category === this.selected) {

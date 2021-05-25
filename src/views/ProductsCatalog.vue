@@ -13,11 +13,12 @@
         <div class="products">
           <div class="row justify-content-center" >
             <ProductsCatalogItem class="col-lg-3"
-                 v-for="(item,index) in GET_ALL_CATEGORIES"
-                 :key="index"
-                 :product="item"
+                 v-for="(item,index) in GET_ALL_SINGLE_PRODUCTS"
+                                 :key="index"
+                                 :product="item"
             >
             </ProductsCatalogItem>
+
           </div>
         </div>
 
@@ -32,14 +33,19 @@ import Intro from "@/components/Intro";
 import {mapActions,mapGetters,mapMutations} from "vuex"
 import ProductsCatalogItem from "@/components/ProductsCatalogItem";
 export default {
-name: "ProductsCatalog",
-  components: {ProductsCatalogItem, Intro, DirectoryLinks, TitleTemplate},
-  methods:{
+  name: "ProductsCatalog",
+  components: {ProductsCatalogItem,Intro, DirectoryLinks, TitleTemplate},
+  data() {
+    return {
+
+    }
+  },
+  methods: {
     ...mapActions(["getProductCategories"]),
     ...mapMutations(["updateProductCategories"]),
   },
-  computed:{
-    ...mapGetters(["getCategories","GET_ALL_CATEGORIES"]),
+  computed: {
+    ...mapGetters(["getCategories", "GET_ALL_SINGLE_PRODUCTS"]),
   },
   created() {
     this.getProductCategories()

@@ -8,7 +8,9 @@
         "description": "2018, USA, Action",
         "rating": 8,
         "img": "gallery-1",
-        "price": 29
+        "price": 29,
+        "Actors":"Paul Rudd, Evangeline Lilly, Michael Peña, Walton Goggins",
+        "Plot":"As Scott Lang balances being both a superhero and a father, Hope van Dyne and Dr. Hank Pym present an urgent new mission that finds the Ant-Man fighting alongside The Wasp to uncover secrets from their past."
       },
       {
         "id": 3,
@@ -16,7 +18,9 @@
         "description": "2018, USA, Action, Fantasy",
         "rating": 10,
         "img": "gallery-2",
-        "price": 56.99
+        "price": 56.99,
+        "Actors":"Robert Downey Jr., Chris Hemsworth, Mark Ruffalo, Chris Evans",
+        "Plot":"The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe."
       },
       {
         "id": 2,
@@ -24,7 +28,9 @@
         "description": "2018, USA, Adventure, Action",
         "rating": 9,
         "img": "gallery-4",
-        "price": 32.56
+        "price": 32.56,
+        "Actors":"Peter Dinklage, Lena Headey, Emilia Clarke, Kit Harington",
+        "Plot":"Nine noble families fight for control over the lands of Westeros, while an ancient enemy returns after being dormant for millennia."
       },
       {
         "id": 5,
@@ -32,7 +38,9 @@
         "description": "2018, USA, Action, Fantasy",
         "rating": 7.7,
         "img": "gallery-6",
-        "price": 39.99
+        "price": 39.99,
+        "Actors":"Jason Momoa, Amber Heard, Willem Dafoe, Patrick Wilson",
+        "Plot":"Arthur Curry, the human-born heir to the underwater kingdom of Atlantis, goes on a quest to prevent a war between the worlds of ocean and land."
       }
     ]
   },
@@ -46,7 +54,8 @@
         "rating": 10,
         "img": "gallery-2",
         "price": 56.99,
-        "imdbID":"tt0944947"
+        "Actors":"Robert Downey Jr., Chris Hemsworth, Mark Ruffalo, Chris Evans",
+        "Plot":"The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe."
       },
       {
         "id": 11,
@@ -54,7 +63,9 @@
         "description": "2014, USA, Adventure, Fantasy",
         "rating": 7.5,
         "img": "gallery-3",
-        "price": 110.99
+        "price": 110.99,
+        "Actors":"Grant Gustin, Candice Patton, Danielle Panabaker, Jesse L. Martin",
+        "Plot":"After being struck by lightning, Barry Allen wakes up from his coma to discover he's been given the power of super speed, becoming the next Flash, fighting crime in Central City."
       },
       {
         "id": 5,
@@ -62,7 +73,9 @@
         "description": "2018, USA, Action, Fantasy",
         "rating": 7.7,
         "img": "gallery-6",
-        "price": 39.99
+        "price": 39.99,
+        "Actors":"Jason Momoa, Amber Heard, Willem Dafoe, Patrick Wilson",
+        "Plot":"Arthur Curry, the human-born heir to the underwater kingdom of Atlantis, goes on a quest to prevent a war between the worlds of ocean and land."
       }
     ]
   },
@@ -75,7 +88,9 @@
         "description": "2014, USA, Adventure, Fantasy",
         "rating": 7.5,
         "img": "gallery-3",
-        "price": 110.99
+        "price": 110.99,
+        "Actors":"Grant Gustin, Candice Patton, Danielle Panabaker, Jesse L. Martin",
+        "Plot":"After being struck by lightning, Barry Allen wakes up from his coma to discover he's been given the power of super speed, becoming the next Flash, fighting crime in Central City."
       },
       {
         "id": 2,
@@ -84,7 +99,8 @@
         "rating": 9,
         "img": "gallery-4",
         "price": 32.56,
-        "imdbID":"tt0944947"
+        "Actors":"Peter Dinklage, Lena Headey, Emilia Clarke, Kit Harington",
+        "Plot":"Nine noble families fight for control over the lands of Westeros, while an ancient enemy returns after being dormant for millennia."
       },
       {
         "id": 8,
@@ -92,7 +108,9 @@
         "description": "2018, USA, Drama, Adventure",
         "rating": 6.8,
         "img": "gallery-5",
-        "price": 16.77
+        "price": 16.77,
+        "Actors":"Brenton Thwaites, Teagan Croft, Anna Diop, Ryan Potter",
+        "Plot":"A team of young superheroes combat evil and other perils."
       },
       {
         "id": 12,
@@ -100,7 +118,9 @@
         "description": "2018, USA, Adventure, Mystery",
         "rating": 7.1,
         "img": "gallery-7",
-        "price": 45.78
+        "price": 45.78,
+        "Actors":"Beckam Crawford, Riley Keough, Jeffrey Wright, Michael Tayles",
+        "Plot":"After the deaths of three children suspected to be killed by wolves, writer Russell Core is hired by the mother of a missing six-year-old boy to track down and locate her son in the Alaskan wilderness."
       },
       {
         "id": 13,
@@ -108,7 +128,9 @@
         "description": "2018, USA, Adventure, Horror",
         "rating": 6,
         "img": "gallery-8",
-        "price": 120.79
+        "price": 120.79,
+        "Actors":"Boyd Holbrook, Trevante Rhodes, Jacob Tremblay, Keegan-Michael Key",
+        "Plot":"When a young boy accidentally triggers the universe's most lethal hunters' return to Earth, only a ragtag crew of ex-soldiers and a disgruntled scientist can prevent the end of the human race."
       }
     ]
   },
@@ -121,9 +143,10 @@
         "description": "2018, USA, Adventure, Horror",
         "rating": 6,
         "img": "gallery-8",
-        "price": 120.79
+        "price": 120.79,
+        "Actors":"Boyd Holbrook, Trevante Rhodes, Jacob Tremblay, Keegan-Michael Key",
+        "Plot":"When a young boy accidentally triggers the universe's most lethal hunters' return to Earth, only a ragtag crew of ex-soldiers and a disgruntled scientist can prevent the end of the human race."
       }
     ]
   }
-
 ]

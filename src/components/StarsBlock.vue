@@ -28,15 +28,13 @@ name: "StarsBlock",
   // },
   props:['imdbRating'],
   methods:{
-    ...mapActions(["getPostsAction","getMovie"]),
+    ...mapActions(["getPostsAction"]),
     ...mapMutations(["updateMovies"])
   },
   computed:{
-    ...mapGetters(["allPosts","allTodos","allMovies"]),
+    ...mapGetters(["allPosts","allTodos"]),
   },
   created() {
-    this.getMovie()
-    this.updateMovies(this.allMovies)
 
   },
 }

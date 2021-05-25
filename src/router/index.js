@@ -21,7 +21,7 @@ const routes = [
     component: MovieDetails
   },
   {
-    path: '/product-item/:id',
+    path: '/product-item/:movie',
     name: 'Single Movie',
     component: ProductItem
   },

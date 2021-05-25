@@ -5,20 +5,21 @@
     <span slot="intro_title">SINGLE MOVIE</span>
   </Intro>
   <DirectoryLinks></DirectoryLinks>
-  <div class="container" >
-    <input type="file" ref="file_input" @change="onChange">
-    <span v-if="this.$refs.file_input">files: {{fileName}}</span>
+  <div class="container"
+       :key="index"
+       v-for="(item,index) in getSingleProduct"
+  >
       <div class="row justify-content-center">
         <div class="product-img">
-          <img :src="allMovies['Poster']" alt="" class="img-fluid">
+          <img :src="require(`@/assets/images/watchmovies/${item.img}.jpg`)" alt="" class="img-fluid">
         </div>
         <div class="product-info">
             <h4 class="product-title">
-              {{product.title}}, USA
+              {{item.title}}
             </h4>
           <div class="d-flex align-items-center">
             <StarsBlock
-                :imdb-rating="this.allMovies.imdbRating"
+                :imdb-rating="item.rating"
             ></StarsBlock>
             <span class="cust-reviews">
               2 customer reviews
@@ -30,23 +31,23 @@
           </p>
           <p>
             <span class="">Actors:</span>
-            <span>David Oliver, Helen Price, Ethan Booth</span>
+            <span>{{ item.Actors}}</span>
           </p>
           <p class="movie-plot">
-            Id aliquet lectus proin nibh nisl. Ultrices dui sapien eget mi proin sed libero enim. Justo laoreet sit amet cursus sit amet. Est ultricies integer quis auctor elit. Erat velit scelerisque in dictum.
+            {{ item.Plot}}
           </p>
           <div class="d-flex align-items-center">
             <div class="info-box">
               <span class="hd">HD</span>
-              <span class="rating">16+</span>
+<!--              <span class="rating">{{getCurrentProduct.Rated}}</span>-->
             </div>
           </div>
-          <h3 class="prod-price">{{ product.price }}</h3>
-          <button class="add-to-cart" @click="ADD_TO_CART(product)">add to cart</button>
-          {{this.$store.getters.getShoppingCart}}
+          <h3 class="prod-price">{{ item.price }}</h3>
+          <button class="add-to-cart" @click="ADD_TO_CART(item)">add to cart</button>
           <div class="share-social">
             <span>Share:</span>
           </div>
+          {{getShoppingCart}}
         </div>
       </div>
   </div>
@@ -68,38 +69,25 @@ name: "ProductItem",
   },
   data() {
       return {
-        fileName:null,
-        product:{
-          id:0,
-          price:29,
-          title:'ANT-MAN AND THE WASP',
-          quantity:1,
-          total:this.price
-        }
+        product:{}
       }
   },
   methods:{
-    ...mapActions(["getPostsAction","getMovie"]),
+    ...mapActions(["getPostsAction","getCurrentProductData"]),
     ...mapMutations(["ADD_TO_CART","CLEAR_CART"]),
-    getData () {
-      this.getPostsAction(26094334).then(response => {
-        this.movieData = response.data;
-      })
-    },
-    onChange() {
-      this.fileName = this.$refs.file_input.files[0].name
-    }
+
   },
   computed:{
-    ...mapGetters(["allPosts","allTodos","allMovies","getShoppingCart"]),
-
+    ...mapGetters(["allPosts","allTodos","getShoppingCart","getCurrentProduct","GET_ALL_SINGLE_PRODUCTS"]),
+    getSingleProduct:function () {
+      return this.GET_ALL_SINGLE_PRODUCTS.filter((value) => {
+          if(value.title === this.$route.params.movie) return value
+      })
+    },
   },
   created() {
-    this.getMovie()
-  },
-  mounted() {
 
-  }
+  },
 }
 </script>
 
